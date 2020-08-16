@@ -1,3 +1,5 @@
+source ~/.bashrc
+
 # Load dotfiles
 for file in ~/.{bash_aliases,bash_prompt,exports,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
