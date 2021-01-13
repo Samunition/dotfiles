@@ -1,6 +1,6 @@
-export DOCKER_HOST=tcp://localhost:2375
 export PATH="$HOME/.tfenv/bin:$PATH"
-export DOCKER_HOST=tcp://localhost:2375
+export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+export LIBGL_ALWAYS_INDIRECT=1
 
 export SDKMAN_DIR="/home/sam/.sdkman"
 [[ -s "/home/sam/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sam/.sdkman/bin/sdkman-init.sh"
