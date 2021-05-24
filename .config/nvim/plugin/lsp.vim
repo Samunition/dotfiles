@@ -7,5 +7,5 @@ nnoremap <leader>rr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-lua require('lspconfig').tsserver.setup{ on_attach=require('completion').on_attach } 
-
+lua require('lspconfig').tsserver.setup{ on_attach=require('completion').on_attach }
+lua require('lspconfig').kotlin_language_server.setup{ on_attach=require('completion').on_attach, settings = { kotlin = { compiler = { jvm = { target = "1.8" }}}} }

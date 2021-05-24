@@ -25,9 +25,11 @@ Plug 'tpope/vim-commentary'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
-color dracula
+color nord
 hi ColorColumn guibg=#ECECEC
 
 let mapleader = ' '
