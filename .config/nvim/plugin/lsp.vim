@@ -11,13 +11,19 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
 lua <<EOLUA
     local cmp = require('cmp')
-    
     cmp.setup({
+        snippet = {
+            expand = function(args)
+                vim.fn["vsnip#anonymous"](args.body)
+            end,
+        },
         mapping = {
             ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
             ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
             ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-            ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+            ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
+            ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
+            ['<C-y>'] = cmp.config.disable,
             ['<C-e>'] = cmp.mapping({
                 i = cmp.mapping.abort(),
                 c = cmp.mapping.close(),
@@ -26,9 +32,22 @@ lua <<EOLUA
         },
         sources = cmp.config.sources({
             { name = 'nvim_lsp' },
+            { name = 'vsnip' },
             { name = 'path' },
             { name = 'buffer', keyword_length = 5 },
         }),
+        formatting = {
+            format = function(entry, vim_item)
+                local tags = {
+                    buffer = "[Buff]",
+                    nvim_lsp = "[LSP]",
+                    vsnip = "[Snip]",
+                    nvim_lua = "[Lua]",
+                }
+                vim_item.menu = tags[entry.source.name]
+                return vim_item
+            end,
+        },
     })
     
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
