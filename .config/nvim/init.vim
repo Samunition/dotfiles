@@ -15,9 +15,11 @@ set nowrap
 set foldmethod=indent
 set foldlevelstart=99
 
+let mapleader = ' '
 map <C-b> :NERDTreeToggle<CR>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+nmap <leader>h :nohlsearch<CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -46,4 +48,3 @@ call plug#end()
 color nord
 hi ColorColumn guibg=#ECECEC
 
-let mapleader = ' '
