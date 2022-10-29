@@ -14,6 +14,7 @@ set colorcolumn=80
 set nowrap
 set foldmethod=indent
 set foldlevelstart=99
+set mouse=
 
 let mapleader = ' '
 map <C-b> :NERDTreeToggle<CR>
@@ -24,9 +25,11 @@ nmap <leader>h :nohlsearch<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " Completion
 Plug 'hrsh7th/nvim-cmp'
@@ -43,8 +46,10 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'arcticicestudio/nord-vim'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug '/home/sam/git/snyk.nvim'
 call plug#end()
 
 color nord
 hi ColorColumn guibg=#ECECEC
-
