@@ -8,6 +8,8 @@ nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>sh <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>K <cmd>lua vim.lsp.buf.hover()<CR>
 
+autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
+
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
 lua <<EOLUA
@@ -30,7 +32,7 @@ lua <<EOLUA
                 i = cmp.mapping.abort(),
                 c = cmp.mapping.close(),
             }),
-            ['<CR>'] = cmp.mapping.confirm({ select = true }),
+            -- ['<CR>'] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
             { name = 'nvim_lsp' },
@@ -53,12 +55,22 @@ lua <<EOLUA
     })
     
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    require('lspconfig').tsserver.setup{ capabilities = capabilities }
-    require('lspconfig').eslint.setup{ capabilities = capabilities }
-    require('lspconfig').kotlin_language_server.setup{ capabilities = capabilities, settings = { kotlin = { compiler = { jvm = { target = "1.8" }}}} }
-    require('lspconfig').java_language_server.setup{ cmd = { 'java-language-server' }, capabilities = capabilities }
-    require('lspconfig').rust_analyzer.setup{ capabilities = capabilities }
-    require('lspconfig').gopls.setup{ capabilities = capabilities }
-    require('lspconfig').terraformls.setup{ capabilities = capabilities }
-    require('lspconfig').tflint.setup{ capabilities = capabilities }
+    require("mason").setup()
+    require("mason-lspconfig").setup({
+        ensure_installed = {
+            "bashls", "clangd", "eslint", "gopls", "tsserver", "sumneko_lua",
+            "kotlin_language_server", "rust_analyzer", "terraformls", "tflint",
+        },
+    })
+    require('lspconfig').bashls.setup({ capabilities = capabilities })
+    require('lspconfig').tsserver.setup({ capabilities = capabilities })
+    require('lspconfig').eslint.setup({ capabilities = capabilities })
+    require('lspconfig').kotlin_language_server.setup({ capabilities = capabilities, settings = { kotlin = { compiler = { jvm = { target = "1.8" }}}} })
+    require('lspconfig').java_language_server.setup({ cmd = { 'java-language-server' }, capabilities = capabilities })
+    require('lspconfig').rust_analyzer.setup({ capabilities = capabilities })
+    require('lspconfig').gopls.setup({ capabilities = capabilities })
+    require('lspconfig').terraformls.setup({ capabilities = capabilities })
+    require('lspconfig').tflint.setup({ capabilities = capabilities })
+    require('lspconfig').clangd.setup({ capabilities = capabilities })
+    require('lspconfig').sumneko_lua.setup({ capabilities = capabilities })
 EOLUA
