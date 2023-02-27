@@ -27,7 +27,7 @@ lua <<EOLUA
             ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
             ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
             ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
-            ['<C-y>'] = cmp.config.disable,
+            ['<C-y>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'i', 's' }),
             ['<C-e>'] = cmp.mapping({
                 i = cmp.mapping.abort(),
                 c = cmp.mapping.close(),

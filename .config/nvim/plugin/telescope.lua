@@ -13,5 +13,10 @@ require("telescope").setup{
         ["<esc>"] = actions.close
       },
     },
-  }
+  },
+  pickers = {
+    find_files = {
+      find_command = { "fdfind", "--type", "f", "--hidden" },
+    },
+  },
 }

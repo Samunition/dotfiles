@@ -5,10 +5,12 @@ require('nvim-treesitter.configs').setup {
         "typescript",
         "markdown",
         "kotlin",
-        "hcl"
+        "hcl",
+        "rust",
     },
 
-    highlight = { enable = true },
+    sync_install = false,
+    highlight = { enable = true, additional_vim_regex_highlighting = false }
 }
 
 -- Reset overriden starting fold level :(
