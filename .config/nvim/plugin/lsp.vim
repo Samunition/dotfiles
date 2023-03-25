@@ -58,7 +58,7 @@ lua <<EOLUA
     require("mason").setup()
     require("mason-lspconfig").setup({
         ensure_installed = {
-            "bashls", "clangd", "eslint", "gopls", "tsserver", "sumneko_lua",
+            "bashls", "clangd", "eslint", "gopls", "tsserver",
             "kotlin_language_server", "rust_analyzer", "terraformls", "tflint",
         },
     })
@@ -72,5 +72,4 @@ lua <<EOLUA
     require('lspconfig').terraformls.setup({ capabilities = capabilities })
     require('lspconfig').tflint.setup({ capabilities = capabilities })
     require('lspconfig').clangd.setup({ capabilities = capabilities })
-    require('lspconfig').sumneko_lua.setup({ capabilities = capabilities })
 EOLUA
