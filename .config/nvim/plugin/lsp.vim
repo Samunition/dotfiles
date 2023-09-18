@@ -35,6 +35,7 @@ lua <<EOLUA
             -- ['<CR>'] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
+            { name = 'copilot' },
             { name = 'nvim_lsp' },
             { name = 'vsnip' },
             { name = 'path' },
@@ -47,6 +48,7 @@ lua <<EOLUA
                     nvim_lsp = "[LSP]",
                     vsnip = "[Snip]",
                     nvim_lua = "[Lua]",
+                    copilot = "[CoPi]",
                 }
                 vim_item.menu = tags[entry.source.name]
                 return vim_item

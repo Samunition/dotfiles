@@ -38,7 +38,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'j-hui/fidget.nvim'
+Plug 'j-hui/fidget.nvim', { 'tag': 'legacy' }
 
 " Debugging
 Plug 'mfussenegger/nvim-dap'
@@ -61,6 +61,14 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'arcticicestudio/nord-vim'
+
+" Copilot
+" Plug 'github/copilot.vim'
+Plug 'zbirenbaum/copilot.lua'
+Plug 'zbirenbaum/copilot-cmp'
+
+" SourceGraph
+Plug 'sourcegraph/sg.nvim', { 'do': 'vim -l build/init.lua' }
 
 Plug 'nvim-lua/plenary.nvim'
 Plug '/home/sam/git/snyk.nvim'
