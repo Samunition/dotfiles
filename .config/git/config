@@ -2,3 +2,19 @@
 	name = Sam Lee
 	email = git@cksum.co.uk
 	signingkey = BC74DB623A283B4B
+[core]
+    editor = vim
+[pull]
+    rebase = false
+[merge]
+    tool = vimdiff
+[mergetool]
+    keepBackup = false
+[fetch]
+    prune = true
+[init]
+    defaultBranch = main
+[help]
+    autocorrect = 1
+[branch]
+    sort = -committerdate
