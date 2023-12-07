@@ -24,7 +24,7 @@ nmap <leader>h :nohlsearch<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/vim/plugged')
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
