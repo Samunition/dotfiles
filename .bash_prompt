@@ -11,8 +11,8 @@ function get_tf_workspace() {
     fi
 }
 
-source /etc/bash_completion.d/git-prompt
-
+# source /etc/bash_completion.d/git-prompt
+# alternatively add git-prompt.sh to ~/.bashrc.d/
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[38;5;166m\]$(__git_ps1)\[\033[00m\]\[\033[35m\]$(get_tf_workspace)\[\033[00m\]\$ '
 
 export PS1
