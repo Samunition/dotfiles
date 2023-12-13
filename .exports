@@ -7,8 +7,6 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$XDG_DATA_HOME/go/bin"
 export PATH="$PATH:$XDG_DATA_HOME/cargo/bin"
 
-export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
-export LIBGL_ALWAYS_INDIRECT=1
 export GH_PACKAGE_TOKEN=TODO
 export FONTAWESOME_PACKAGE_TOKEN=TODO
 
