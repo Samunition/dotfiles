@@ -23,3 +23,5 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export TMUX_PLUGIN_MANAGER_PATH="$XDG_DATA_HOME/tmux/plugins"
 export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
+
+export EDITOR="vim"
