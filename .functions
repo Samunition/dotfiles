@@ -8,3 +8,7 @@ function cdf () {
 function aws_config () {
   export AWS_SDK_LOAD_CONFIG="true"
 }
+
+function jwtdecode() {
+  jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< "$1"
+}
