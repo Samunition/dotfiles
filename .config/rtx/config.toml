@@ -1,5 +1,0 @@
-[tools]
-node = 'lts'
-
-[settings]
-legacy_version_file = true
