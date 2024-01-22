@@ -56,6 +56,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'onsails/lspkind-nvim'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'ray-x/lsp_signature.nvim'
 
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
