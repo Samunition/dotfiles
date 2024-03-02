@@ -14,7 +14,8 @@ vim.keymap.set("n", "<leader>dapui", dapui.toggle, { desc = "[DAP] toggle ui" })
 
 
 require("dap-vscode-js").setup({
-    debugger_path = "/home/sam/.vim/plugged/vscode-js-debug",
+    -- debugger_path = "/home/sam/.vim/plugged/vscode-js-debug",
+    debugger_path = "/home/sam/.local/share/vim/plugged/vscode-js-debug/",
     adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
 })
 

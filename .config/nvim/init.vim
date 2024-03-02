@@ -69,7 +69,7 @@ Plug 'zbirenbaum/copilot.lua'
 Plug 'zbirenbaum/copilot-cmp'
 
 " SourceGraph
-Plug 'sourcegraph/sg.nvim', { 'do': 'vim -l build/init.lua' }
+" Plug 'sourcegraph/sg.nvim', { 'do': 'vim -l build/init.lua' }
 
 Plug 'nvim-lua/plenary.nvim'
 Plug '/home/sam/git/snyk.nvim'

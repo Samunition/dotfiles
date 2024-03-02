@@ -86,4 +86,5 @@ lua <<EOLUA
     require('lspconfig').terraformls.setup({ capabilities = capabilities })
     require('lspconfig').tflint.setup({ capabilities = capabilities })
     require('lspconfig').clangd.setup({ capabilities = capabilities })
+    require('lspconfig').pylsp.setup({ capabilities = capabilities })
 EOLUA
