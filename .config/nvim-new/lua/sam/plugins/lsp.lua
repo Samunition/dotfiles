@@ -4,6 +4,7 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "j-hui/fidget.nvim",
+        "stevearc/conform.nvim",
     },
     config = function()
         vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, { desc = "[d]efinition" })
@@ -37,7 +38,7 @@ return {
                 function(server_name) -- default handler
                     require("lspconfig")[server_name].setup({ capabilities = capabilities })
                 end,
-                ["lua_ls"] = function ()
+                ["lua_ls"] = function()
                     require("lspconfig")["lua_ls"].setup({
                         settings = {
                             Lua = {
@@ -57,6 +58,23 @@ return {
                     })
                 end
             },
+        })
+
+        require("conform").setup {
+            formatters_by_ft = {
+                typescript = { "prettier" },
+                javascript = { "prettier" },
+            },
+        }
+
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            callback = function(args)
+                require("conform").format {
+                    bufnr = args.buf,
+                    lsp_fallback = true,
+                    -- quiet = true,
+                }
+            end,
         })
     end,
 }
