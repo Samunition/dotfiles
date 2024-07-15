@@ -10,7 +10,7 @@ vim.opt.termguicolors = true
 -- guicursor=, showmatch
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
--- undodir, undofile
+vim.opt.undofile = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = "80"
