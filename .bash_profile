@@ -9,7 +9,7 @@ unset file;
 # History
 HISTCONTROL=ignoreboth
 shopt -s histappend
-HISTSIZE=10000
+HISTSIZE=-1
 HISTFILESIZE=unlimited-power
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
