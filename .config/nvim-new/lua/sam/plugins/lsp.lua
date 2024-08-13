@@ -71,7 +71,7 @@ return {
                     vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjs.jar"),
                 },
             },
-            filetypes = { "javascript", "typescript" }
+            filetypes = { "javascript", "typescript", "sh" }
         })
 
         require("conform").setup {
