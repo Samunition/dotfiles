@@ -11,7 +11,10 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=-1
 HISTFILESIZE=unlimited-power
-PROMPT_COMMAND="history -a"
+
+if [[ ";${PROMPT_COMMAND:-};" != *";history -a;"* ]]; then
+    PROMPT_COMMAND="history -a${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
+fi
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
