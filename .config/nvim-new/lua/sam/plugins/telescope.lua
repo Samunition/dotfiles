@@ -4,7 +4,7 @@ return {
         "nvim-lua/plenary.nvim",
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
-    config = function ()
+    config = function()
         local actions = require("telescope.actions")
         local builtin = require("telescope.builtin")
 
@@ -26,6 +26,7 @@ return {
                         ["<ESC>"] = actions.close,
                     },
                 },
+                file_ignore_patterns = { "node_modules", ".git", "target", "dist", "build", ".cargo" },
             },
             pickers = {
                 find_files = {

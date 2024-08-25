@@ -6,11 +6,12 @@ return {
         "mxsdev/nvim-dap-vscode-js",
         {
             "microsoft/vscode-js-debug",
-            tag= "v1.74.1",
+            tag = "v1.74.1",
             build = "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=true npm install --legacy-peer-deps && npm run compile",
         },
+        "leoluz/nvim-dap-go",
     },
-    config = function ()
+    config = function()
         local dap = require("dap")
         local dapui = require("dapui")
 
@@ -40,5 +41,7 @@ return {
                 }
             }
         end
+
+        require("dap-go").setup()
     end,
 }
