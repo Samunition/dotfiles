@@ -31,7 +31,7 @@ return {
             ensure_installed = {
                 "clangd",
                 "lua_ls",
-                "tsserver",
+                "ts_ls",
                 "rust_analyzer",
                 "bashls",
                 "gopls",
