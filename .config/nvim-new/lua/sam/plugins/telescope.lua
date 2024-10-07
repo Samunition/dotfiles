@@ -26,7 +26,7 @@ return {
                         ["<ESC>"] = actions.close,
                     },
                 },
-                file_ignore_patterns = { "node_modules", ".git", "target", "dist", "build", ".cargo" },
+                file_ignore_patterns = { "node_modules/", ".git/", "target/", "dist/", "build/", ".cargo/" },
             },
             pickers = {
                 find_files = {
