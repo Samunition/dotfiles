@@ -35,6 +35,7 @@ return {
                 "rust_analyzer",
                 "bashls",
                 "gopls",
+                "zls",
             },
             handlers = {
                 function(server_name) -- default handler
