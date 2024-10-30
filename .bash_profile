@@ -7,13 +7,13 @@ done;
 unset file;
 
 # History
-HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth
 shopt -s histappend
-HISTSIZE=-1
-HISTFILESIZE=unlimited-power
+export HISTSIZE=-1
+export HISTFILESIZE=unlimited-power
 
 if [[ ";${PROMPT_COMMAND:-};" != *";history -a;"* ]]; then
-    PROMPT_COMMAND="history -a${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
+    export PROMPT_COMMAND="history -a${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 fi
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards

@@ -20,5 +20,5 @@
     sort = -committerdate
 [commit]
     verbose = true
-; [url "ssh://git@github.com/alamy-ops/"]
-; 	insteadOf = https://github.com/alamy-ops/
+[url "ssh://git@github.com/alamy-ops/"]
+	insteadOf = https://github.com/alamy-ops/
