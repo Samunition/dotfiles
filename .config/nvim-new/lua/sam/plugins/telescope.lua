@@ -18,6 +18,9 @@ return {
         vim.keymap.set('n', '<leader>dd', builtin.diagnostics)
         vim.keymap.set('n', '<leader>man', builtin.man_pages)
         vim.keymap.set('n', '<leader>help', builtin.help_tags)
+        vim.keymap.set('n', '<leader>fc', function()
+            builtin.find_files({ cwd = vim.fn.stdpath("config") })
+        end)
 
         require("telescope").setup({
             defaults = {
