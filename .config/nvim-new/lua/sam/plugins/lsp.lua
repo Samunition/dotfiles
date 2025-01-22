@@ -19,12 +19,8 @@ return {
         vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, { desc = "[s]ignature [h]elp" })
         vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
-        local capabilities = vim.tbl_deep_extend(
-            "force",
-            vim.lsp.protocol.make_client_capabilities(),
-            require("cmp_nvim_lsp").default_capabilities()
-        )
-        -- updated_capabilities.textDocument.completion.completionItem.insertReplaceSupport = false ??
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({

@@ -7,6 +7,7 @@ return {
         "hrsh7th/cmp-path",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
+        "hrsh7th/cmp-nvim-lsp-signature-help",
     },
     config = function()
         local cmp = require("cmp")
@@ -33,14 +34,16 @@ return {
                 { name = "copilot" },
                 { name = "cody" },
                 { name = "nvim_lsp" },
+                { name = 'nvim_lsp_signature_help' },
                 { name = "path" },
-                { name = "buffer", keyword_length = 5 },
+                { name = "buffer" },
             }),
             formatting = {
                 format = function(entry, vim_item)
                     local tags = {
                         buffer = "[Buff]",
                         nvim_lsp = "[LSP]",
+                        nvim_lsp_signature_help = "[LSP]",
                         luasnip = "[Snip]",
                         copilot = "[CoPi]",
                         cody = "[Cody]",
