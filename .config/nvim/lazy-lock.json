@@ -13,7 +13,7 @@
   "everforest": { "branch": "master", "commit": "87b8554b2872ef69018d4b13d288756dd4e47c0f" },
   "fidget.nvim": { "branch": "main", "commit": "d855eed8a06531a7e8fd0684889b2943f373c469" },
   "github-colors": { "branch": "main", "commit": "7292749e49e6f870e63879a528bb05c8c8d1a59a" },
-  "lazy.nvim": { "branch": "main", "commit": "460e1cd8f24e364d54543a4b0e83f6f4ec1f65fb" },
+  "lazy.nvim": { "branch": "main", "commit": "7e6c863bc7563efbdd757a310d17ebc95166cef3" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "25c11854aa25558ee6c03432edfa0df0217324be" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "neovim": { "branch": "main", "commit": "8b1fd252255a7f2c41b4192a787ab62660b29f72" },

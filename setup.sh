@@ -14,7 +14,3 @@ done
 
 # machine specifics
 # ln -fns "$PWD/machine/danu" "$HOME/.bashrc.d"
-# Add this to bashrc if not present
-# for file in ~/.bashrc.d/*; do
-#    source "$file"
-#done

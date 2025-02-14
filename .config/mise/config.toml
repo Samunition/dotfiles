@@ -1,2 +1,6 @@
 [tools]
-node = 'lts'
+node = "lts"
+tmux = "latest"
+neovim = "latest"
+fzf = "latest"
+fd = "latest"

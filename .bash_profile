@@ -1,8 +1,10 @@
-source ~/.bashrc
-
 # Load dotfiles
-for file in ~/.{bash_aliases,bash_prompt,exports,functions}; do
+for file in ~/.{bashrc,bash_aliases,bash_prompt,exports,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+
+for file in ~/.bashrc.d/*; do
+    source "$file"
 done;
 unset file;
 
@@ -23,3 +25,4 @@ fi
 if [ -z "$TMUX" ]; then
     tmux a -t default || tmux new -s default
 fi
+
