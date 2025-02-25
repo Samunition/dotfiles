@@ -22,3 +22,16 @@
     verbose = true
 [url "ssh://git@github.com/alamy-ops/"]
 	insteadOf = https://github.com/alamy-ops/
+[tag]
+    sort = version:refname
+[diff]
+    algorithm = histogram
+    renames = true
+[push]
+    autoSetupRemote = true
+[rebase]
+    autoStash = true
+    updateRefs = true
+[rerere]
+    enabled = true
+    autoUpdate = true
