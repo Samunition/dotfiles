@@ -35,6 +35,9 @@ return {
                 find_files = {
                     find_command = { "fd", "--type", "f", "--hidden" },
                 },
+                live_grep = {
+                    additional_args = { "--hidden" },
+                },
             },
         })
         require('telescope').load_extension('fzf')
