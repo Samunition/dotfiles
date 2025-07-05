@@ -21,6 +21,9 @@ return {
         vim.keymap.set('n', '<leader>fc', function()
             builtin.find_files({ cwd = vim.fn.stdpath("config") })
         end)
+        vim.keymap.set('n', '<leader>wn', function()
+            builtin.find_files({ cwd = "~/work/notes/" })
+        end)
 
         require("telescope").setup({
             defaults = {

@@ -22,6 +22,11 @@ return {
             local chat = require("CopilotChat")
             chat.setup({
                 chat_autocomplete = false,
+                providers = {
+                    github_models = {
+                        disabled = true,
+                    },
+                },
                 prompts = {
                     Review = {
                         prompt =

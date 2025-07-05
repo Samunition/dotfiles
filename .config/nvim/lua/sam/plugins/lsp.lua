@@ -14,7 +14,8 @@ return {
         vim.keymap.set("n", "<leader>i", vim.lsp.buf.implementation, { desc = "[i]mplementation" })
         vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, { desc = "[s]how [d]iagnostics" })
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[r]e[n]ame" })
-        vim.keymap.set("n", "<leader>rr", vim.lsp.buf.references, { desc = "[r]efe[r]ences" })
+        -- handled by telescope
+        -- vim.keymap.set("n", "<leader>rr", vim.lsp.buf.references, { desc = "[r]efe[r]ences" })
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[c]ode [a]ction" })
         vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, { desc = "[s]ignature [h]elp" })
         vim.keymap.set("n", "K", vim.lsp.buf.hover)
