@@ -32,7 +32,6 @@ return {
                 "rust_analyzer",
                 "bashls",
                 "gopls",
-                "zls",
             },
             handlers = {
                 function(server_name) -- default handler
@@ -59,6 +58,10 @@ return {
                 end
             },
         })
+
+        -- Not using mason as im using zig master
+        vim.lsp.config["zls"] = { settings = { enable_build_on_save = true } }
+        vim.lsp.enable("zls")
 
         require("sonarlint").setup({
             server = {
