@@ -6,6 +6,7 @@ foreground="#d8dee9"
 background="#24283b"
 yellow="#e0af68"
 green="#9ece6a",
+pink="#f7768e"
 
 # Borders
 tmux set-option -g pane-border-style "fg=${grey}"
@@ -16,6 +17,9 @@ tmux set-option -g status-interval 1
 tmux set-option -g status-style "bg=${background},fg=${foreground}"
 tmux set-option -g status-left "#[bg=${green},fg=${background}]#{?client_prefix,#[bg=${yellow}],} #S "
 tmux set-option -g  status-right ""
+tmux set-option -g status-right-length 100
+
+tmux set-option -ga status-right "#[fg=${background},bg=${pink}] #(copilot-usage --tmux) "
 
 # Epoch
 tmux set-option -ga status-right "#[fg=${background},bg=${green}] %s "
