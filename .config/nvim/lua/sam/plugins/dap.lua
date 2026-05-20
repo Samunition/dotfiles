@@ -6,8 +6,7 @@ return {
         "mxsdev/nvim-dap-vscode-js",
         {
             "microsoft/vscode-js-debug",
-            tag = "v1.74.1",
-            build = "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=true npm install --legacy-peer-deps && npm run compile",
+            build = "npm install --legacy-peer-deps && npx gulp dapDebugServer",
         },
         "leoluz/nvim-dap-go",
     },
@@ -26,11 +25,23 @@ return {
         vim.keymap.set("n", "<leader>dapui", dapui.toggle, { desc = "[DAP] toggle ui" })
 
         require("dap-vscode-js").setup({
-            debugger_path = "/home/sam/.local/share/nvim/lazy/vscode-js-debug",
+            debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
             adapters = { 'pwa-node', 'node-terminal' },
         })
 
-        for _, language in ipairs({ "typescript", "javascript" }) do
+        for _, adapter in ipairs({ "pwa-node", "node-terminal" }) do
+            dap.adapters[adapter] = {
+                type = "server",
+                host = "localhost",
+                port = "${port}",
+                executable = {
+                    command = "node",
+                    args = { vim.fn.stdpath("data") .. "/lazy/vscode-js-debug/dist/src/dapDebugServer.js", "${port}" },
+                },
+            }
+        end
+
+        for _, language in ipairs({ "typescript", "javascript", "typescriptreact" }) do
             dap.configurations[language] = {
                 {
                     type = "pwa-node",

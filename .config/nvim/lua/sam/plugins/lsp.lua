@@ -26,12 +26,13 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "clangd",
+                -- "clangd",
                 "lua_ls",
-                "ts_ls",
-                "rust_analyzer",
-                "bashls",
-                "gopls",
+                -- "ts_ls",
+                -- "rust_analyzer",
+                -- "bashls",
+                -- "gopls",
+                -- "zls",
             },
             handlers = {
                 function(server_name) -- default handler

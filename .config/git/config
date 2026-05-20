@@ -35,3 +35,6 @@
 [rerere]
     enabled = true
     autoUpdate = true
+[alias]
+    wip = commit -am "wip" --no-verify
+    wipa = !git add . && git commit -m "wip" --no-verify
