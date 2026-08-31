@@ -23,18 +23,10 @@ return {
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                 ['<C-e>'] = cmp.mapping.abort(),
                 ['<C-Space'] = cmp.mapping.complete(),
-                ['<C-a>'] = cmp.mapping.complete({
-                    sources = {
-                        { name = "copilot" },
-                        { name = "cody" },
-                    },
-                }),
             }),
             sources = cmp.config.sources({
-                { name = "cody" },
                 { name = "nvim_lsp" },
                 { name = 'nvim_lsp_signature_help' },
-                { name = "copilot" },
                 { name = "path" },
                 { name = "buffer" },
             }),
@@ -45,8 +37,6 @@ return {
                         nvim_lsp = "[LSP]",
                         nvim_lsp_signature_help = "[LSP]",
                         luasnip = "[Snip]",
-                        copilot = "[CoPi]",
-                        cody = "[Cody]",
                     }
                     vim_item.menu = tags[entry.source.name]
                     return vim_item

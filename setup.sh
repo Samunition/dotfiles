@@ -12,5 +12,7 @@ for file in .{bash_profile,bash_aliases,bash_prompt,exports,functions}; do
     ln -fns "$PWD/$file" "$HOME/$file"
 done
 
+ln -fns "$PWD/.agents" "$HOME/.agents"
+
 # machine specifics
 # ln -fns "$PWD/machine/danu" "$HOME/.bashrc.d"

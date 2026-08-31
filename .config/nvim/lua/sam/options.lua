@@ -16,3 +16,4 @@ vim.opt.colorcolumn = "80"
 vim.opt.wrap = false
 vim.opt.mouse = ""
 vim.opt.updatetime = 200
+vim.opt.autoread = true

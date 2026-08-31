@@ -11,7 +11,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export GH_PACKAGE_TOKEN=TODO
 export FONTAWESOME_PACKAGE_TOKEN=TODO
-export OPENAI_API_KEY=TODO
 
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
@@ -26,6 +25,7 @@ export MAVEN_OPTS="-Dmaven.repo.local=$XDG_DATA_HOME/m2"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export OPENCODE_INSTALL_DIR="$HOME/.local/bin"
 export PLATFORMIO_CORE_DIR="$XDG_DATA_HOME"/platformio
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export TMUX_PLUGIN_MANAGER_PATH="$XDG_DATA_HOME/tmux/plugins"

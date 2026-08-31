@@ -19,8 +19,6 @@ tmux set-option -g status-left "#[bg=${green},fg=${background}]#{?client_prefix,
 tmux set-option -g  status-right ""
 tmux set-option -g status-right-length 100
 
-tmux set-option -ga status-right "#[fg=${background},bg=${pink}] #(copilot-usage --tmux) "
-
 # Epoch
 tmux set-option -ga status-right "#[fg=${background},bg=${green}] %s "
 

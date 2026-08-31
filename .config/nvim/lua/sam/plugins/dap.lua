@@ -53,6 +53,22 @@ return {
             }
         end
 
+        dap.adapters.codelldb = {
+            type = "executable",
+            command = "codelldb",
+        }
+
+        dap.configurations.zig = {{
+            name = "Launch file",
+            type = "codelldb",
+            request = "launch",
+            program = "${workspaceFolder}/zig-out/bin/lindale",
+            args = {"serve"},
+            cwd = '${workspaceFolder}',
+            stopOnEntry = false,
+        }}
+
+
         require("dap-go").setup()
     end,
 }

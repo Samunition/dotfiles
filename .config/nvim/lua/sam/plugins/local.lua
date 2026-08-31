@@ -1,3 +1,3 @@
 return {
-    { dir = "~/code/work.nvim/" }
+    -- { dir = "~/code/work.nvim/" }
 }

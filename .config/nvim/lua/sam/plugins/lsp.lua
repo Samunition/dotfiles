@@ -46,8 +46,8 @@ return {
                                 workspace = {
                                     checkThirdParty = false,
                                     library = {
+                                        vim.env.VIMRUNTIME,
                                         "${3rd}/luv/library",
-                                        unpack(vim.api.nvim_get_runtime_file("", true)),
                                     }
                                 },
                                 completion = {
@@ -61,7 +61,12 @@ return {
         })
 
         -- Not using mason as im using zig master
-        vim.lsp.config["zls"] = { settings = { enable_build_on_save = true } }
+        vim.lsp.config["zls"] = {
+            settings = {
+                enable_build_on_save = true,
+                warn_style = true,
+            }
+        }
         vim.lsp.enable("zls")
 
         require("sonarlint").setup({
